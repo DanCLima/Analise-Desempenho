@@ -66,23 +66,28 @@ int main()
     double tempo_saida = 120;
     double tempo_coleta = 10.0;
     double soma_ocupacao = 0.0;
+    double nova_conexao = 0.0;
 
+    // while (tempo_decorrido < params.tempo_simulacao) {
+    //     if (tempo_decorrido == nova_conexao) {
+    //         //criar conexao (alocar nova pessoa que vai alocar dados a cada 20 milissegundos)
+    //                 // alocar
+    //                 // gerar o tempo de duração (2 min)
+
+    //         // gerar o tempo de quando começa a próxima conexão
+
+    //     } else if (tempo_decorrido == chegada_pct) {
+    //         /* usar arvore heap  com a nova_conexao e os 7978,... pessoas (o minimo está sempre na raiz) */
+    //         tempo_atual += 0.02;
+    //         // so adiciona na arvore se o tempo nao ultrapassar os 2 min daquela conexao
+    //     } else if (tempo_decorrido == tempo_coleta) {
+    //         /* code */
+    //     }
+    // }
+    
     return 0;
 
-    // if (tempo_decorrido == nova_conexao) {
-    //     //criar conexao (alocar nova pessoa que vai alocar dados a cada 20 milissegundos)
-    //             // alocar
-    //             // gerar o tempo de duração (2 min)
 
-    //     // gero o tempo de quando começa a próxima conexão
-
-    // } else if (tempo_decorrido == chegada_pct) {
-    //     /* usar arvore heap  com a nova_conexao e os 7978,... pessoas (o minimo está sempre na raiz) */
-    //     tempo_atual += 0.02;
-    //     // so adiciona na arvore se o tempo nao ultrapassar os 2 min daquela conexao
-    // } else if (tempo_decorrido == tempo_coleta) {
-    //     /* code */
-    // }
 }
 
 

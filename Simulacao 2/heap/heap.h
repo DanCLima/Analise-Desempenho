@@ -5,4 +5,6 @@ int esquerda(int i);
 int direita(int i);
 void heapify_up(int v);
 void heapify_down(int v);
-void insere(int valor);
+void insere(Evento valor);
+void deleta(int posicao);
+void printa_raiz(void);

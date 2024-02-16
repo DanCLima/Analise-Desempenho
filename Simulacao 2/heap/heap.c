@@ -1,7 +1,13 @@
 #include <stdio.h>
 #define MAXN 1000100
 
-int heap[MAXN];
+typedef struct {
+    double tempo_evento;
+    double tempo_duracao;
+    short tipo_evento;
+} Evento;
+
+Evento heap[MAXN];
 int tamanho_heap;
 
 int pai(int i)
@@ -25,9 +31,9 @@ void heapify_up(int v)
         return;
 
     int p = pai(v);
-    if (heap[v] < heap[p])
+    if (heap[v].tempo_evento < heap[p].tempo_evento)
     {
-        int temp = heap[v];
+        Evento temp = heap[v];
         heap[v] = heap[p];
         heap[p] = temp;
 
@@ -42,14 +48,14 @@ void heapify_down(int v)
 
     int menor = v;
 
-    if (d <= tamanho_heap && heap[d] < heap[menor])
+    if (d <= tamanho_heap && heap[d].tempo_evento < heap[menor].tempo_evento)
         menor = d;
-    if (e <= tamanho_heap && heap[e] < heap[menor])
+    if (e <= tamanho_heap && heap[e].tempo_evento < heap[menor].tempo_evento)
         menor = e;
 
     if (menor != v)
     {
-        int temp = heap[v];
+        Evento temp = heap[v];
         heap[v] = heap[menor];
         heap[menor] = temp;
 
@@ -57,7 +63,7 @@ void heapify_down(int v)
     }
 }
 
-void insere(int valor)
+void insere(Evento valor)
 {
     heap[++tamanho_heap] = valor;
 
@@ -66,7 +72,7 @@ void insere(int valor)
 
 void deleta(int posicao)
 {
-    int temp = heap[posicao];
+    Evento temp = heap[posicao];
     heap[posicao] = heap[tamanho_heap];
     heap[tamanho_heap] = temp;
 
@@ -75,30 +81,6 @@ void deleta(int posicao)
     heapify_down(posicao);
 }
 
-// int main()
-// {
-//     int n;
-//     scanf("%d", &n);
-
-//     for (int i = 1; i <= n; i++)
-//     {
-//         char operacao;
-//         scanf(" %c", &operacao);
-
-//         if (operacao == 'I')
-//         { // inserir um número
-//             int valor;
-//             scanf("%d", &valor);
-
-//             insere(valor);
-//         }
-
-//         if (operacao == 'D')
-//         {
-//             printf("%d\n", heap[1]); // imprime o valor do topo
-//             deleta(1);
-//         }
-//     }
-
-//     return 0;
-// }
+void printa_raiz(void) {
+    printf("Raiz: Evento %d tempo %.10lF\n", heap[1].tipo_evento, heap[1].tempo_evento);
+}
